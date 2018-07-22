@@ -1,0 +1,262 @@
+// DEFAULTS
+$defaultcolor: #D62929;
+
+body{
+    min-height: 5000px;
+    font-family: 'Montserrat', sans-serif;
+    background: url("../images/white-wall-texture-background.jpg");
+    // background: green;
+    &::-webkit-scrollbar-track
+    {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        border-radius: 10px;
+        background-color: #F5F5F5;
+    }
+
+    &::-webkit-scrollbar
+    {
+        width: 12px;
+        background-color: #F5F5F5;
+    }
+
+    &::-webkit-scrollbar-thumb
+    {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+        background-color: $defaultcolor;
+    }
+}
+
+h1,h2,h3,h4,h5,h6,p{
+    margin: 0;
+}
+
+.layout{
+    width: 100%;
+    position: relative;
+    height: 100%;
+    background: rgba($color: black, $alpha: 0.55)
+}
+
+#preloader{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background: white;
+    z-index: 999999;
+}
+
+.center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+// FOOD CARD
+.foodcard{
+    // border: 1px solid red;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+    transition: .6s;
+
+    &:hover .foodimage{
+        -webkit-filter: grayscale(100%);
+        filter: gray;
+    }
+
+    .foodimage{
+        width: 100%;
+        padding-top: 100%;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        background-size: cover;
+        background-position: center center;
+        box-shadow: inset 2px 2px 5px white;
+    }
+
+    .nameprice{
+        & *{
+            // line-height: 30px;
+            // width: 50%;
+        }
+
+        h4{
+            font-size: 1.3rem;
+        }
+
+        span{
+            color: $defaultcolor;
+            text-align: right;
+        }
+    }
+}
+
+// HEADER START HERE
+header{
+    height: 100vh;
+    background-image:  url("../images/architecture-bar-building-331991.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+
+    .navbar-bg{
+        background: rgba($color: black, $alpha: 0.5)
+    }
+
+    .center{
+        color: white;
+
+        h2{
+            font-family: 'Righteous', cursive;
+            font-size: 4.5em;
+            margin: -0.8rem auto 0.8rem;
+        }
+    }
+}
+
+// ABOUT START HERE
+#about{
+    div{
+        background-size: cover;
+        background-position: center center;
+    }
+
+    .brandname{
+        color: $defaultcolor;
+    }
+
+    .col-lg-6{
+        // border: 1px solid orange;
+        min-height: 200px;
+    }
+
+    .minipic{
+        height: 180px;
+    }
+
+    hr{
+        width: 50%;
+        border-top: 2px solid;
+    }
+
+    .d-lg-none{
+        .col-6:first-of-type{
+            background-image: url("../images/beef-bread-bun-750075.jpg");
+            border-left: 15px solid white;
+            border-right: 3px solid white;
+            background-position: left
+        }
+
+        .col-6:last-of-type{
+            background-image: url("../images/blur-chef-close-up-671956.jpg");
+            border-right: 15px solid white;
+            border-left: 3px solid white;
+        }
+
+        .col-12:last-of-type{
+            background-image: url(../images/buffet-chicken-cooking-5938.jpg);
+            border-top: 6px solid white;
+            border-left: 15px solid white;
+            border-right: 15px solid white;
+        }
+    }
+
+}
+
+// CONVERSATION START HERE
+#conversation{
+    .row > .col-lg-6{
+        min-height: 350px;
+    }    
+
+    .col-lg-6:first-of-type, .col-12{
+        background-size: cover;
+        background-position: center center;
+    }
+
+    .col-12{
+        padding: 0;
+        height: 300px;
+        background-attachment: fixed;
+    }
+
+    .center{
+        width: 90%;
+    }
+}
+
+
+//MENU START HERE
+#menu{
+
+
+    .btn{
+        border-color: $defaultcolor;
+        color: $defaultcolor;
+
+        &:hover{
+            background: $defaultcolor;
+            color: white;
+        }
+    }
+}
+
+
+//MENU PAGE (EXTERNAL)
+#menuPage{
+    .tab-content{
+        background: $defaultcolor;
+        min-height: 2000px;
+    }
+}
+
+@media screen and (min-width: 992px){
+    #menuPage{
+        .col-lg-1{
+            padding-right: 0;
+            position: fixed;
+        }
+
+        .nav-pills{
+            .nav-link{
+                padding: 0;
+                padding-top: 100%;
+                position: relative;
+                border-radius: 100%;
+                background-color: white;
+                color: $defaultcolor;
+                transition: .3s;
+                background-size: cover;
+                background-position: center center;
+    
+                &.active{
+                    background: $defaultcolor !important;
+                    color: white;
+                    border-bottom-right-radius: 0;
+                    border-top-right-radius: 0;
+
+                    span{
+                        opacity: 1;
+                    }
+                }
+
+                &:not(:last-child){
+                    margin-bottom: 10px;
+                }
+            }
+
+            span{
+                position: absolute;
+                opacity: 0;
+                transition: .3s;
+                transition-delay: .1s;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+}

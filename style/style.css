@@ -1,0 +1,198 @@
+body {
+  min-height: 5000px;
+  font-family: 'Montserrat', sans-serif;
+  background: url("../images/white-wall-texture-background.jpg");
+}
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+body::-webkit-scrollbar {
+  width: 12px;
+  background-color: #F5F5F5;
+}
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #D62929;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+.layout {
+  width: 100%;
+  position: relative;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+#preloader {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background: white;
+  z-index: 999999;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.foodcard {
+  margin-bottom: 30px;
+  border-radius: 10px;
+  background: white;
+  cursor: pointer;
+  transition: .6s;
+}
+.foodcard:hover .foodimage {
+  -webkit-filter: grayscale(100%);
+  filter: gray;
+}
+.foodcard .foodimage {
+  width: 100%;
+  padding-top: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-size: cover;
+  background-position: center center;
+  box-shadow: inset 2px 2px 5px white;
+}
+.foodcard .nameprice h4 {
+  font-size: 1.3rem;
+}
+.foodcard .nameprice span {
+  color: #D62929;
+  text-align: right;
+}
+
+header {
+  height: 100vh;
+  background-image: url("../images/architecture-bar-building-331991.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+header .navbar-bg {
+  background: rgba(0, 0, 0, 0.5);
+}
+header .center {
+  color: white;
+}
+header .center h2 {
+  font-family: 'Righteous', cursive;
+  font-size: 4.5em;
+  margin: -0.8rem auto 0.8rem;
+}
+
+#about div {
+  background-size: cover;
+  background-position: center center;
+}
+#about .brandname {
+  color: #D62929;
+}
+#about .col-lg-6 {
+  min-height: 200px;
+}
+#about .minipic {
+  height: 180px;
+}
+#about hr {
+  width: 50%;
+  border-top: 2px solid;
+}
+#about .d-lg-none .col-6:first-of-type {
+  background-image: url("../images/beef-bread-bun-750075.jpg");
+  border-left: 15px solid white;
+  border-right: 3px solid white;
+  background-position: left;
+}
+#about .d-lg-none .col-6:last-of-type {
+  background-image: url("../images/blur-chef-close-up-671956.jpg");
+  border-right: 15px solid white;
+  border-left: 3px solid white;
+}
+#about .d-lg-none .col-12:last-of-type {
+  background-image: url(../images/buffet-chicken-cooking-5938.jpg);
+  border-top: 6px solid white;
+  border-left: 15px solid white;
+  border-right: 15px solid white;
+}
+
+#conversation .row > .col-lg-6 {
+  min-height: 350px;
+}
+#conversation .col-lg-6:first-of-type, #conversation .col-12 {
+  background-size: cover;
+  background-position: center center;
+}
+#conversation .col-12 {
+  padding: 0;
+  height: 300px;
+  background-attachment: fixed;
+}
+#conversation .center {
+  width: 90%;
+}
+
+#menu .btn {
+  border-color: #D62929;
+  color: #D62929;
+}
+#menu .btn:hover {
+  background: #D62929;
+  color: white;
+}
+
+#menuPage .tab-content {
+  background: #D62929;
+  min-height: 2000px;
+}
+
+@media screen and (min-width: 992px) {
+  #menuPage .col-lg-1 {
+    padding-right: 0;
+    position: fixed;
+  }
+  #menuPage .nav-pills .nav-link {
+    padding: 0;
+    padding-top: 100%;
+    position: relative;
+    border-radius: 100%;
+    background-color: white;
+    color: #D62929;
+    transition: .3s;
+    background-size: cover;
+    background-position: center center;
+  }
+  #menuPage .nav-pills .nav-link.active {
+    background: #D62929 !important;
+    color: white;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+  }
+  #menuPage .nav-pills .nav-link.active span {
+    opacity: 1;
+  }
+  #menuPage .nav-pills .nav-link:not(:last-child) {
+    margin-bottom: 10px;
+  }
+  #menuPage .nav-pills span {
+    position: absolute;
+    opacity: 0;
+    transition: .3s;
+    transition-delay: .1s;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
