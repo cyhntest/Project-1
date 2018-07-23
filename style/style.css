@@ -1,16 +1,22 @@
+.foodcard .foodimage img, #about img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
 body {
-  min-height: 5000px;
   font-family: 'Montserrat', sans-serif;
   background: url("../images/white-wall-texture-background.jpg");
 }
 body::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
-  background-color: #F5F5F5;
+  background-color: #263238;
 }
 body::-webkit-scrollbar {
   width: 12px;
-  background-color: #F5F5F5;
+  background-color: #D62929;
 }
 body::-webkit-scrollbar-thumb {
   border-radius: 10px;
@@ -56,13 +62,15 @@ h1, h2, h3, h4, h5, h6, p {
   filter: gray;
 }
 .foodcard .foodimage {
+  position: relative;
   width: 100%;
-  padding-top: 100%;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  background-size: cover;
-  background-position: center center;
   box-shadow: inset 2px 2px 5px white;
+}
+.foodcard .foodimage img {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 .foodcard .nameprice h4 {
   font-size: 1.3rem;
@@ -91,10 +99,6 @@ header .center h2 {
   margin: -0.8rem auto 0.8rem;
 }
 
-#about div {
-  background-size: cover;
-  background-position: center center;
-}
 #about .brandname {
   color: #D62929;
 }
@@ -103,6 +107,7 @@ header .center h2 {
 }
 #about .minipic {
   height: 180px;
+  padding: 0;
 }
 #about hr {
   width: 50%;
@@ -156,42 +161,103 @@ header .center h2 {
   min-height: 2000px;
 }
 
+#mobilemenuPage button {
+  color: white;
+  font-family: 'Righteous', cursive;
+}
+#mobilemenuPage .card-header {
+  background: #263238;
+}
+#mobilemenuPage .activeCard.card-header {
+  background: #D62929;
+}
+
+footer {
+  background: #263238;
+  color: white;
+}
+footer .contact a {
+  margin: 0 5px;
+  text-align: center;
+  color: #263238;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border: 2px solid transparent;
+  background: white;
+  border-radius: 100%;
+  transition: .5s;
+}
+footer .contact a:hover {
+  background: transparent;
+  border-color: white;
+  color: white;
+}
+footer .col-lg-6 {
+  padding: 0;
+}
+footer .col-lg-6 iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+footer h3 {
+  font-weight: bold;
+}
+footer .col-lg-3, footer .col-lg-6 {
+  min-height: 320px;
+}
+
 @media screen and (min-width: 992px) {
   #menuPage .col-lg-1 {
     padding-right: 0;
-    position: fixed;
+    padding-left: 35px;
   }
   #menuPage .nav-pills .nav-link {
     padding: 0;
     padding-top: 100%;
     position: relative;
     border-radius: 100%;
-    background-color: white;
-    color: #D62929;
+    background-color: #263238;
     transition: .3s;
     background-size: cover;
     background-position: center center;
   }
   #menuPage .nav-pills .nav-link.active {
     background: #D62929 !important;
-    color: white;
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
-  }
-  #menuPage .nav-pills .nav-link.active span {
-    opacity: 1;
   }
   #menuPage .nav-pills .nav-link:not(:last-child) {
     margin-bottom: 10px;
   }
   #menuPage .nav-pills span {
     position: absolute;
-    opacity: 0;
+    font-family: 'Righteous', cursive;
+    color: white;
+    font-size: .9em;
     transition: .3s;
     transition-delay: .1s;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+}
+@media screen and (max-width: 991.9px) {
+  .foodcard .foodimage span {
+    position: absolute;
+    border-radius: 100%;
+    color: white;
+    width: 55px;
+    top: 1px;
+    right: 1px;
+    height: 55px;
+    text-align: center;
+    line-height: 55px;
+    background: #D62929;
+  }
+  .foodcard .nameprice h4 {
+    width: 100% !important;
   }
 }
 

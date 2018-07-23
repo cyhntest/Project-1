@@ -1,8 +1,20 @@
 // DEFAULTS
 $defaultcolor: #D62929;
+$secondcolor: #263238;
+
+%img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+// img:not(.preloader img){
+//     @extend %img;
+// }
 
 body{
-    min-height: 5000px;
+    // min-height: 5000px;
     font-family: 'Montserrat', sans-serif;
     background: url("../images/white-wall-texture-background.jpg");
     // background: green;
@@ -10,13 +22,13 @@ body{
     {
         -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
         border-radius: 10px;
-        background-color: #F5F5F5;
+        background-color: $secondcolor;
     }
 
     &::-webkit-scrollbar
     {
         width: 12px;
-        background-color: #F5F5F5;
+        background-color: $defaultcolor;
     }
 
     &::-webkit-scrollbar-thumb
@@ -68,13 +80,17 @@ h1,h2,h3,h4,h5,h6,p{
     }
 
     .foodimage{
+        position: relative;
         width: 100%;
-        padding-top: 100%;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
-        background-size: cover;
-        background-position: center center;
         box-shadow: inset 2px 2px 5px white;
+
+        img{
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            @extend %img;
+        }
     }
 
     .nameprice{
@@ -119,9 +135,9 @@ header{
 
 // ABOUT START HERE
 #about{
-    div{
-        background-size: cover;
-        background-position: center center;
+
+    img{
+        @extend %img;
     }
 
     .brandname{
@@ -135,6 +151,7 @@ header{
 
     .minipic{
         height: 180px;
+        padding: 0;
     }
 
     hr{
@@ -205,7 +222,7 @@ header{
 }
 
 
-//MENU PAGE (EXTERNAL)
+//MENU PAGE (EXTERNAL PAGE)
 #menuPage{
     .tab-content{
         background: $defaultcolor;
@@ -213,11 +230,75 @@ header{
     }
 }
 
+//MENU PAGE (MOBILE VERSION)
+#mobilemenuPage{
+    button{
+        color: white;
+        font-family: 'Righteous', cursive;
+    }
+
+    .card-header{
+        background: $secondcolor;
+    }
+
+    .activeCard.card-header{
+        background: $defaultcolor;
+    }
+}
+
+footer{
+    background: $secondcolor;
+    color: white;
+
+    .contact{
+        a{
+            margin: 0 5px;
+            text-align: center;
+            color: $secondcolor;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            border: 2px solid transparent;
+            background: white;
+            border-radius: 100%;
+            transition: .5s;
+
+            &:hover{
+                background: transparent;
+                border-color: white;
+                color: white;
+            }
+        }
+    }
+
+    .col-lg-6{
+        padding: 0;
+
+        iframe{
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    }
+    
+
+    h3{
+        // color: $defaultcolor;
+        font-weight: bold;
+    }
+
+    .col-lg-3, .col-lg-6{
+        min-height: 320px;
+    }
+}
+
+
+// MEDIA QUERIES
 @media screen and (min-width: 992px){
     #menuPage{
         .col-lg-1{
             padding-right: 0;
-            position: fixed;
+            padding-left: 35px;
         }
 
         .nav-pills{
@@ -226,21 +307,16 @@ header{
                 padding-top: 100%;
                 position: relative;
                 border-radius: 100%;
-                background-color: white;
-                color: $defaultcolor;
+                background-color: $secondcolor;
+                // color: $defaultcolor;
                 transition: .3s;
                 background-size: cover;
                 background-position: center center;
     
                 &.active{
                     background: $defaultcolor !important;
-                    color: white;
                     border-bottom-right-radius: 0;
                     border-top-right-radius: 0;
-
-                    span{
-                        opacity: 1;
-                    }
                 }
 
                 &:not(:last-child){
@@ -250,13 +326,35 @@ header{
 
             span{
                 position: absolute;
-                opacity: 0;
+                font-family: 'Righteous', cursive;
+                color: white;
+                font-size: .9em;
                 transition: .3s;
                 transition-delay: .1s;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
             }
+        }
+    }
+}
+
+@media screen and (max-width: 991.9px){
+    .foodcard{
+        .foodimage span{
+            position: absolute;
+            border-radius: 100%;
+            color: white;
+            width: 55px;
+            top: 1px;
+            right: 1px;
+            height: 55px;
+            text-align: center;
+            line-height: 55px;
+            background: $defaultcolor;
+        }
+        .nameprice h4{
+            width: 100% !important;
         }
     }
 }
